@@ -14,15 +14,89 @@
         <legend>폼 서식</legend>
         <div>
           <label for="userName">이름</label>
-          <input type="text" id="userName" />
+          <input
+            type="text"
+            name=""
+            userName
+            id="userName"
+            required
+            placeholder="예)정원식"
+            maxlength="5"
+            minlength="3"
+          />
         </div>
+        <!-- 비밀번호 입력서식 -->
         <div>
           <label for="userPWD">비밀번호</label>
-          <input type="password" id="userPWD" />
+          <input
+            type="password"
+            name="userPWD"
+            id="userPWD"
+            required
+            placeholder="8자리 이상"
+          />
         </div>
+        <!-- 검색 입력 서식 -->
         <div>
           <label for="likelionSearch">검색</label>
           <input type="search" id="likelionSearch" />
+        </div>
+        <!-- 이메일 입력 서식 -->
+        <div>
+          <label for="userEmail">이메일</label>
+          <input type="email" name="userEmail" id="userEmail" required />
+        </div>
+        <!-- tel 유형의 입력 서식 -->
+        <div>
+          <label for="userPhone">연락처</label>
+          <input type="tel" name="userPhone" id="userPhone" required />
+        </div>
+        <!-- 체크박스 서식 -->
+        <div>
+          <input
+            type="checkbox"
+            value="HTML"
+            name="classLikelion"
+            id="classHtml"
+          />
+          <label for="classHtml">HTML</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            value="CSS"
+            name="classLikelion"
+            id="classCss"
+          />
+          <label for="classCss">CSS</label>
+        </div>
+        <div>
+          <input type="checkbox" value="JS" name="classLikelion" id="classJs" />
+          <label for="classJs">JS</label>
+        </div>
+        <!-- 라디오 서식 -->
+        <div>
+          <input
+            type="radio"
+            value="classRoom1"
+            checked
+            name="classRoom"
+            id="classLikelion1"
+          />
+          <label for="classLikelion1">회고 1팀</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            value="classRoom2"
+            name="classRoom"
+            id="classLikelion2"
+          />
+          <label for="classLikelion2">회고 2팀</label>
+        </div>
+        <!-- 전송 버튼 서식 -->
+        <div>
+          <input type="submit" value="전송" />
         </div>
       </fieldset>
     </form>
