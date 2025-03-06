@@ -1,0 +1,96 @@
+@import '/src/common/modern-reset.css';
+@import '/src/common/login-theme.css';
+@import '/src/common/a11y.css';
+@import '/src/common/base.css';
+
+/* 체크박스 (배경이미지) */
+.checkbox {
+  --size: 1.5rem;
+
+  display: inline-flex;
+  height: var(--size);
+  block-size: var(--size);
+  position: relative;
+
+  &:has(.bg-img) input {
+    /* 체크박스를 지우는 방법 1) 키보드로 접근 불가
+    display: none; */
+    /* 방법 2) 체크박스만 뒤로 보내기
+    z-index : -1; */
+
+    /* 방법 3 */
+    position: absolute;
+    top: 0;
+    inset-block-start: 0;
+    left: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    width: var(--size);
+    inline-size: var(--size);
+    height: var(--size);
+    block-size: var(--size);
+    appearance: none;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 1px var(--blue-900);
+      border-radius: var(--rounded-xs);
+    }
+  }
+
+  label.bg-img {
+    background: url(/src/assets/naver/unchecked.svg) no-repeat;
+    padding-left: 1.875rem;
+    padding-inline-start: 1.875rem;
+    /* 방법 2) text-indent: 2rem; */
+
+    /* 아이콘이 다 보이지 않는다면 1) 글자 크기 만큼 줄이는 법*/
+    /* background-size: 16px 16px; */
+    /* 방법 2) 부모에 높이를 늘려주고 align-content 사용 */
+    align-content: center;
+  }
+
+  input:checked + label.bg-img {
+    background-image: url(/src/assets/naver/checked.svg);
+  }
+}
+
+/* 체크박스 (svg 요소) */
+.checkbox.svg {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.25rem;
+  position: relative;
+  input {
+    position: absolute;
+    top: 0;
+    inset-block-start: 0;
+    left: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    width: var(--size);
+    inline-size: var(--size);
+    height: var(--size);
+    block-size: var(--size);
+    appearance: none;
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 1px var(--blue-900);
+      border-radius: var(--rounded-xs);
+    }
+  }
+  label {
+    display: contents;
+  }
+  input:checked + label {
+    .svg--area,
+    .svg--border {
+      fill: var(--green-500);
+    }
+  }
+
+  input:checked + label {
+    .svg--mark {
+      fill: var(--white);
+    }
+  }
+}
